@@ -1,5 +1,4 @@
-import logo from "./logo.svg";
-import toDoItem from "./toDoItem";
+// import logo from "./logo.svg";
 import { getData } from "./data";
 import ToDoItem from "./toDoItem";
 import { useState } from "react";
