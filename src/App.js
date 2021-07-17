@@ -20,6 +20,8 @@ function App() {
   return (
     <div className="todo-list">
       <h1>Hey Firebase!</h1>
+      <h1>This is a test!</h1>
+
       {toDos.map((item) => (
         // console.log(item)
 
