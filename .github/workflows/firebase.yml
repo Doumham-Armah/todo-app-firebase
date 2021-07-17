@@ -11,6 +11,9 @@ on:
 
 jobs:
   build:
+    env:
+      process.env.CI: false
+
     runs-on: ubuntu-latest
 
     strategy:
