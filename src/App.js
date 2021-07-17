@@ -1,5 +1,4 @@
 // import logo from "./logo.svg";
-import ToDoItem from "./toDoItem";
 import ToDoList from "./ToDoList";
 import "./styles.css";
 
