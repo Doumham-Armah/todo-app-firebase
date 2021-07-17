@@ -12,16 +12,28 @@ const ToDoList = () => {
       if (todo.id === id) todo.completed = !todo.completed;
       return todo;
     });
-    console.log(updatedTodos);
+    // console.log(updatedTodos);
     setToDos(updatedTodos);
   }
+
+  const handleDelete = (id) => {
+    const updatedTodos = toDos.filter((todo) => {
+      if (todo.id !== id) return todo;
+    });
+    setToDos(updatedTodos);
+  };
 
   return (
     <div className="todo-list">
       <h1>Hey Firebase!</h1>
       {toDos.map((item) => (
         // console.log(item)
-        <ToDoItem key={item.id} item={item} handleChange={updateCompleted} />
+        <ToDoItem
+          key={item.id}
+          item={item}
+          handleChange={updateCompleted}
+          handleDelete={handleDelete}
+        />
       ))}
       {/* {console.log("toDos: ", toDos)} */}
     </div>

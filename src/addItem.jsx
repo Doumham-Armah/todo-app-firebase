@@ -23,6 +23,7 @@ const AddItem = ({ toDos, setToDos }) => {
         placeholder="enter to do"
         value={item.text}
         onChange={handleChange}
+        onDelete={handleDelete}
       />
       <button>Add</button>
     </form>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function ToDoItem({ item, handleChange }) {
+function ToDoItem({ item, handleChange, handleDelete }) {
   const completedStyle = {
     fontStyle: "italic",
     color: "#cdcdcd",
@@ -15,6 +15,7 @@ function ToDoItem({ item, handleChange }) {
         onChange={() => handleChange(item.id)}
       />
       <p style={item.completed ? completedStyle : null}>{item.text}</p>
+      <button onClick={() => handleDelete(item.id)}>Delete</button>
     </div>
   );
 }
