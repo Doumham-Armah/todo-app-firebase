@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import firebase from "../utils/firebase";
+import firebase from "../firebase";
 
 const AddItem = () => {
   const [title, setTitle] = useState("");
@@ -14,7 +14,6 @@ const AddItem = () => {
     };
 
     toDoRef.push(item);
-    // console.log(toDos);
   };
 
   const handleChange = (event) => {

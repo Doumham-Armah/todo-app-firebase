@@ -3,6 +3,7 @@ import firebase from "firebase";
 const firebaseConfig = {
   apiKey: "AIzaSyC1oCE3OCJ6yJHWpI4ZUM--xiOQKgzplh0",
   authDomain: "to-do-app-20533.firebaseapp.com",
+  databaseURL: "https://to-do-app-20533-default-rtdb.firebaseio.com",
   projectId: "to-do-app-20533",
   storageBucket: "to-do-app-20533.appspot.com",
   messagingSenderId: "351031111838",

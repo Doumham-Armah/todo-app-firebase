@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import ToDoItem from "./toDoItem";
 import AddItem from "./addItem";
-import firebase from "../firebase";
+import app from "../firebase";
 import "../styles.css";
 
 const ToDoList = () => {
@@ -10,7 +10,7 @@ const ToDoList = () => {
 
   // get to do items from database and store them in state
   useEffect(() => {
-    const toDoRef = firebase.database().ref("toDoItems");
+    const toDoRef = app.database().ref("toDoItems");
     toDoRef.on("value", (snapshot) => {
       const items = snapshot.val();
       const toDos = [];
@@ -24,13 +24,13 @@ const ToDoList = () => {
   }, []);
 
   const updateCompleted = ({ item }) => {
-    const toDoRef = firebase.database().ref("toDoItems").child(item.id);
+    const toDoRef = app.database().ref("toDoItems").child(item.id);
     toDoRef.update({ completed: !item.completed });
   };
 
   // delete item from db
   const handleDelete = (id) => {
-    const toDoRef = firebase.database().ref("toDoItems").child(id);
+    const toDoRef = app.database().ref("toDoItems").child(id);
     toDoRef.remove();
   };
 
