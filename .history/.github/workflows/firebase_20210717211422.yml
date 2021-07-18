@@ -32,7 +32,6 @@ jobs:
           CI: false
 
       # - run: npm test
-      - run: npm start
       - name: Archive Build
         uses: actions/upload-artifact@v2
         with:
