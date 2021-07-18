@@ -12,9 +12,9 @@ function ToDoItem({ item, handleChange, handleDelete }) {
       <input
         type="checkbox"
         checked={item.completed}
-        onChange={() => handleChange(item.id)}
+        onChange={() => handleChange(item.id, item.completed)}
       />
-      <p style={item.completed ? completedStyle : null}>{item.text}</p>
+      <p style={item.completed ? completedStyle : null}>{item.title}</p>
       <button onClick={() => handleDelete(item.id)}>Delete</button>
     </div>
   );

@@ -1,18 +1,25 @@
 import React, { useState } from "react";
+import firebase from "./utils/firebase";
 
-const AddItem = ({ toDos, setToDos }) => {
-  const [item, setItem] = useState({ text: "", completed: false });
+const AddItem = () => {
+  const [title, setTitle] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let updatedTodos = toDos;
-    setToDos(updatedTodos.push(item));
+
+    const toDoRef = firebase.database().ref("toDoItems");
+    const item = {
+      title,
+      completed: false,
+    };
+
+    toDoRef.push(item);
     // console.log(toDos);
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setItem({ [name]: value });
+    const { value } = event.target;
+    setTitle(value);
   };
 
   return (
@@ -21,9 +28,8 @@ const AddItem = ({ toDos, setToDos }) => {
         type="text"
         name="text"
         placeholder="enter to do"
-        value={item.text}
+        value={title.text}
         onChange={handleChange}
-        onDelete={handleDelete}
       />
       <button>Add</button>
     </form>
