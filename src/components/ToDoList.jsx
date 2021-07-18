@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import ToDoItem from "./toDoItem";
 import AddItem from "./addItem";
-import firebase from "./utils/firebase";
-import "./styles.css";
+import firebase from "../utils/firebase";
+import "../styles.css";
 
 const ToDoList = () => {
   const [toDos, setToDos] = useState([]);
@@ -23,12 +23,10 @@ const ToDoList = () => {
     });
   }, []);
 
-  function updateCompleted(id, completed) {
-    const toDoRef = firebase.database().ref("toDoItems").child(id);
-    console.log(toDoRef);
-
-    toDoRef.update({ completed: !completed });
-  }
+  const updateCompleted = ({ item }) => {
+    const toDoRef = firebase.database().ref("toDoItems").child(item.id);
+    toDoRef.update({ completed: !item.completed });
+  };
 
   // delete item from db
   const handleDelete = (id) => {
@@ -43,7 +41,6 @@ const ToDoList = () => {
 
       {toDos
         ? toDos.map((item, index) => (
-            // console.log(item)
             <ToDoItem
               key={index}
               item={item}

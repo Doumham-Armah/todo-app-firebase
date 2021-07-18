@@ -1,5 +1,5 @@
 // import logo from "./logo.svg";
-import ToDoList from "./ToDoList";
+import ToDoList from "./components/ToDoList";
 import "./styles.css";
 
 function App() {

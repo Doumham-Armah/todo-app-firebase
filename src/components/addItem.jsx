@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import firebase from "./utils/firebase";
+import firebase from "../utils/firebase";
 
 const AddItem = () => {
   const [title, setTitle] = useState("");
