@@ -20,6 +20,12 @@ export function AuthProvider({ children }) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
 
+  //   sign in an existing user
+  function login(email, password) {
+    //   returns a promise
+    return auth.signInWithEmailAndPassword(email, password);
+  }
+
   //   put in useEffect so it only runs once when the comp is mounted
   useEffect(() => {
     const unsub = auth.onAuthStateChanged((user) => {
@@ -32,6 +38,7 @@ export function AuthProvider({ children }) {
 
   const value = {
     currentUser,
+    login,
     signup,
   };
   return (

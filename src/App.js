@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 import SignUp from "./components/SignUp";
+import Login from "./components/Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ToDoList from "./components/ToDoList";
 import { AuthProvider } from "./contexts/AuthContext";
@@ -17,6 +18,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={ToDoList} />
               <Route path="/signup" component={SignUp} />
+              <Route path="/login" component={Login} />
             </Switch>
           </AuthProvider>
         </Router>
