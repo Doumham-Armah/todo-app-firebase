@@ -12,6 +12,7 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
+  const [loading, setLoading] = useState(true);
 
   //   sign up a new user
   function signup(email, password) {
@@ -21,7 +22,10 @@ export function AuthProvider({ children }) {
 
   //   put in useEffect so it only runs once when the comp is mounted
   useEffect(() => {
-    const unsub = auth.onAuthStateChanged((user) => setCurrentUser(user));
+    const unsub = auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+      setLoading(false);
+    });
 
     return unsub;
   }, []);
@@ -30,5 +34,9 @@ export function AuthProvider({ children }) {
     currentUser,
     signup,
   };
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
 }
