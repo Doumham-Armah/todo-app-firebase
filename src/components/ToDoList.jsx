@@ -8,7 +8,7 @@ import "../styles.css";
 
 const ToDoList = () => {
   const [toDos, setToDos] = useState([]);
-  const [setError] = useState("");
+  const [error, setError] = useState("");
   const { logout } = useAuth();
   const history = useHistory;
   const user = auth.currentUser;
