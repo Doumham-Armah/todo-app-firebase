@@ -1,13 +1,16 @@
-// import logo from "./logo.svg";
 import { useEffect, useState } from "react";
 import ToDoItem from "./toDoItem";
 import AddItem from "./addItem";
 import { auth, db } from "../firebase";
-
+import { useAuth } from "../contexts/AuthContext";
+import { useHistory } from "react-router-dom";
 import "../styles.css";
 
 const ToDoList = () => {
   const [toDos, setToDos] = useState([]);
+  const [setError] = useState("");
+  const { logout } = useAuth();
+  const history = useHistory;
   const user = auth.currentUser;
   const uid = user.uid;
 
@@ -39,22 +42,39 @@ const ToDoList = () => {
     toDoRef.remove();
   };
 
-  return (
-    <div className="todo-list">
-      <h1>Hey Firebase!</h1>
-      <AddItem />
+  async function handleLogOut() {
+    setError("");
+    try {
+      await logout();
+      history.push("/login");
+    } catch {
+      setError("Failed to log out");
+    }
+  }
 
-      {toDos
-        ? toDos.map((item, index) => (
-            <ToDoItem
-              key={index}
-              item={item}
-              handleChange={updateCompleted}
-              handleDelete={handleDelete}
-            />
-          ))
-        : null}
-    </div>
+  return (
+    <>
+      <div className="todo-list">
+        <h1>Hey Firebase!</h1>
+        <AddItem />
+
+        {toDos
+          ? toDos.map((item, index) => (
+              <ToDoItem
+                key={index}
+                item={item}
+                handleChange={updateCompleted}
+                handleDelete={handleDelete}
+              />
+            ))
+          : null}
+      </div>
+      <div className="w-100 text-center mt-2">
+        <button varian="link" onClick={handleLogOut}>
+          Log Out
+        </button>
+      </div>
+    </>
   );
 };
 

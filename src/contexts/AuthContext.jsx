@@ -26,6 +26,10 @@ export function AuthProvider({ children }) {
     return auth.signInWithEmailAndPassword(email, password);
   }
 
+  function logout() {
+    return auth.signOut();
+  }
+
   //   put in useEffect so it only runs once when the comp is mounted
   useEffect(() => {
     const unsub = auth.onAuthStateChanged((user) => {
@@ -40,6 +44,7 @@ export function AuthProvider({ children }) {
     currentUser,
     login,
     signup,
+    logout,
   };
   return (
     <AuthContext.Provider value={value}>

@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ToDoList from "./components/ToDoList";
 import { AuthProvider } from "./contexts/AuthContext";
+import PrivateRoute from "./components/PrivateRoute";
 import "./styles.css";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
         <Router>
           <AuthProvider>
             <Switch>
-              <Route exact path="/" component={ToDoList} />
+              <PrivateRoute exact path="/" component={ToDoList} />
               <Route path="/signup" component={SignUp} />
               <Route path="/login" component={Login} />
             </Switch>
