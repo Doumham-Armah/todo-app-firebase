@@ -13,13 +13,13 @@ function App() {
       <AuthProvider>
         <Switch>
           <PrivateRoute exact path="/" component={ToDoList} />
-          <Route path="/signup" component={SignUp} />
           <Container
             className="d-flex align-items-center justify-content-center"
             style={{ minHeight: "100vh" }}
           >
             <div className="w-100" style={{ maxWidth: "400px" }}>
               <Route path="/login" component={Login} />
+              <Route path="/signup" component={SignUp} />
             </div>
           </Container>
         </Switch>

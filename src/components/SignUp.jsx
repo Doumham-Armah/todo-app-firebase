@@ -12,7 +12,7 @@ const SignUp = () => {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     if (passwordlRef.current.value !== passwordConfirmlRef.current.value) {
@@ -22,7 +22,7 @@ const SignUp = () => {
     try {
       setError("");
       setLoading(true);
-      signup(emailRef.current.value, passwordlRef.current.value)
+      await signup(emailRef.current.value, passwordlRef.current.value)
         .then(() => {
           // Signed in
           history.push("/");
