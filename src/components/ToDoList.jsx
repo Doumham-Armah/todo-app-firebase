@@ -55,7 +55,7 @@ const ToDoList = () => {
   return (
     <>
       <div className="todo-list">
-        <h1>Hey Firebase!</h1>
+        <h1>To-Do App</h1>
         <AddItem />
 
         {toDos

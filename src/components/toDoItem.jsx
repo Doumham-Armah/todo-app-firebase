@@ -1,4 +1,6 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+
 
 function ToDoItem({ item, handleChange, handleDelete }) {
   const completedStyle = {
@@ -15,7 +17,7 @@ function ToDoItem({ item, handleChange, handleDelete }) {
         onChange={() => handleChange({ item })}
       />
       <p style={item.completed ? completedStyle : null}>{item.title}</p>
-      <button onClick={() => handleDelete(item.id)}>Delete</button>
+      <Button className="delete-button" onClick={() => handleDelete(item.id)}>Delete</Button>
     </div>
   );
 }
