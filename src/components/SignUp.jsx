@@ -12,7 +12,7 @@ const SignUp = () => {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
 
     if (passwordlRef.current.value !== passwordConfirmlRef.current.value) {
@@ -22,12 +22,18 @@ const SignUp = () => {
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordlRef.current.value);
-      history.push("/");
+      signup(emailRef.current.value, passwordlRef.current.value)
+        .then(() => {
+          // Signed in
+          history.push("/");
+        })
+        .catch((errorMessage) => {
+          setError(errorMessage.message);
+        });
+      setLoading(false);
     } catch {
       setError("Failed to create an account 😔");
     }
-    setLoading(false);
   }
 
   return (
