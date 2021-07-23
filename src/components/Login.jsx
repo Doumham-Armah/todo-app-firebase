@@ -11,6 +11,26 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
+  // async function handleSubmit(e) {
+  //   e.preventDefault();
+
+  //   try {
+  //     setError("");
+  //     setLoading(true);
+  //     await login(emailRef.current.value, passwordlRef.current.value)
+  //       .then(() => {
+  //         // Signed in
+  //         history.push("/");
+  //       })
+  //       .catch((errorMessage) => {
+  //         setError(errorMessage.message);
+  //       });
+  //     setLoading(false);
+  //   } catch {
+  //     setError("Failed to sign in 😔");
+  //   }
+  // }
+
   async function handleSubmit(e) {
     e.preventDefault();
 

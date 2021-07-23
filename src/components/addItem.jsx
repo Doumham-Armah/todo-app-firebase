@@ -14,8 +14,8 @@ const AddItem = () => {
       title,
       completed: false,
     };
-
-    db.ref("users").child(uid).push(item);
+    // if to-do item not empty only then push to db
+    if (item.title) db.ref("users").child(uid).push(item);
     // .then((item) => {
     //     console.log('Saved Data', item)
     // })
