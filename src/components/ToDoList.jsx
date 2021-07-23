@@ -2,17 +2,18 @@
 import { useEffect, useState } from "react";
 import ToDoItem from "./toDoItem";
 import AddItem from "./addItem";
-// import firebase from "../firebase";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 
 import "../styles.css";
 
 const ToDoList = () => {
   const [toDos, setToDos] = useState([]);
+  const user = auth.currentUser;
+  const uid = user.uid;
 
-  // get to do items from database and store them in state
+  // fetch to-do items of a user from database and store them in state
   useEffect(() => {
-    const toDoRef = db.ref("toDoItems");
+    const toDoRef = db.ref("users").child(uid);
     toDoRef.on("value", (snapshot) => {
       const items = snapshot.val();
       const toDos = [];
@@ -26,13 +27,15 @@ const ToDoList = () => {
   }, []);
 
   const updateCompleted = ({ item }) => {
-    const toDoRef = db.ref("toDoItems").child(item.id);
+    // find user by UID-> item to update by item.id
+    const toDoRef = db.ref("users").child(uid).child(item.id);
     toDoRef.update({ completed: !item.completed });
   };
 
   // delete item from db
   const handleDelete = (id) => {
-    const toDoRef = db.ref("toDoItems").child(id);
+    // find user by UID-> item to delete by item.id
+    const toDoRef = db.ref("users").child(uid).child(id);
     toDoRef.remove();
   };
 
