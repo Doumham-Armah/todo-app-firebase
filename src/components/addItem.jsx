@@ -6,9 +6,9 @@ const AddItem = () => {
 
   // add to-do item of user to db on form submit
   const handleSubmit = (e) => {
-    setTitle("")
+    setTitle("");
     e.preventDefault();
-    
+
     const uid = auth.currentUser.uid;
 
     const item = {
@@ -17,7 +17,7 @@ const AddItem = () => {
     };
     // if to-do item not empty only then push to db
     if (item.title) db.ref("users").child(uid).push(item);
-    
+
     // .then((item) => {
     //     console.log('Saved Data', item)
     // })
@@ -32,16 +32,18 @@ const AddItem = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="to-do text"
-        placeholder="enter to do"
-        value={title}
-        onChange={handleChange}
-      />
-      <button>Add</button>
-    </form>
+    <div className="new">
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="to-do text"
+          placeholder="enter to do"
+          value={title}
+          onChange={handleChange}
+        />
+        <button>+</button>
+      </form>
+    </div>
   );
 };
 

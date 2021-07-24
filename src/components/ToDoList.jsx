@@ -24,8 +24,6 @@ const ToDoList = () => {
         toDos.push({ id, ...items[id] });
       }
       setToDos(toDos);
-      console.log(toDos);
-      console.log(toDos.length);
     });
   }, []);
 
@@ -54,10 +52,9 @@ const ToDoList = () => {
 
   return (
     <>
+      <h1 className="title">To-Do App</h1>
+      <AddItem />
       <div className="todo-list">
-        <h1>To-Do App</h1>
-        <AddItem />
-
         {toDos
           ? toDos.map((item, index) => (
               <ToDoItem

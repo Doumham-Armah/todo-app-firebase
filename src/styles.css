@@ -1,5 +1,5 @@
 body {
-  background-color: whitesmoke;
+  background-color: blue;
 }
 
 .todo-list {
@@ -42,7 +42,30 @@ input[type="checkbox"]:focus {
   outline: 0;
 }
 
-.delete-button{
+.delete-button {
   margin-left: 75%;
   margin-bottom: 1%;
+}
+
+.new {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  margin: auto;
+  margin-top: 30px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.title {
+  margin: auto;
+  margin-top: 30px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
