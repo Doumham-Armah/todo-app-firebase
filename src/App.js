@@ -12,20 +12,22 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <Switch>
-          <ThemeProvider>
+        <ThemeProvider>
+          <Switch>
+            {/* <ThemeProvider> */}
             <PrivateRoute exact path="/" component={ToDoList} />
-          </ThemeProvider>
-          <Container
-            className="d-flex align-items-center justify-content-center"
-            style={{ minHeight: "100vh" }}
-          >
-            <div className="w-100" style={{ maxWidth: "400px" }}>
-              <Route path="/login" component={Login} />
-              <Route path="/signup" component={SignUp} />
-            </div>
-          </Container>
-        </Switch>
+            {/* </ThemeProvider> */}
+            <Container
+              className="d-flex align-items-center justify-content-center"
+              style={{ minHeight: "100vh" }}
+            >
+              <div className="w-100" style={{ maxWidth: "400px" }}>
+                <Route path="/login" component={Login} />
+                <Route path="/signup" component={SignUp} />
+              </div>
+            </Container>
+          </Switch>
+        </ThemeProvider>
       </AuthProvider>
     </Router>
   );
