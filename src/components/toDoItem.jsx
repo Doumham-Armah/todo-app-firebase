@@ -1,7 +1,10 @@
-import React from "react";
 import { Button } from "react-bootstrap";
+import { useTheme } from "../contexts/ThemeContext";
+import React from "react";
 
 function ToDoItem({ item, handleChange, handleDelete }) {
+  const { toggle } = useTheme();
+
   const completedStyle = {
     fontStyle: "italic",
     color: "#cdcdcd",
@@ -9,7 +12,7 @@ function ToDoItem({ item, handleChange, handleDelete }) {
   };
 
   return (
-    <div className="todo-item">
+    <div className={toggle ? "todo-item-dark" : "todo-item-light"}>
       <input
         id={item.id}
         type="checkbox"

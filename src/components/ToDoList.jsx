@@ -3,6 +3,7 @@ import ToDoItem from "./toDoItem";
 import AddItem from "./addItem";
 import { auth, db } from "../firebase";
 import { useAuth } from "../contexts/AuthContext";
+import { useTheme } from "../contexts/ThemeContext";
 import { useHistory } from "react-router-dom";
 import "../styles.css";
 
@@ -10,6 +11,7 @@ const ToDoList = () => {
   const [toDos, setToDos] = useState([]);
   const [error, setError] = useState("");
   const { logout } = useAuth();
+  const { toggle, toggleTheme } = useTheme();
   const history = useHistory;
   const user = auth.currentUser;
   const uid = user.uid;
@@ -53,8 +55,11 @@ const ToDoList = () => {
   return (
     <>
       <h1 className="title">To-Do App</h1>
+      <h2 className="title">{`Welcome, ${user.email}!`}</h2>
+
       <AddItem />
-      <div className="todo-list">
+
+      <div className={toggle ? "todo-list-dark" : "todo-list-light"}>
         {toDos
           ? toDos.map((item, index) => (
               <ToDoItem
@@ -66,9 +71,13 @@ const ToDoList = () => {
             ))
           : null}
       </div>
+      {console.log("toggle: ", toggle)}
       <div className="w-100 text-center mt-2">
-        <button varian="link" onClick={handleLogOut}>
+        <button variant="link" onClick={handleLogOut}>
           Log Out
+        </button>
+        <button variant="link" onClick={toggleTheme}>
+          Toggle Theme
         </button>
       </div>
     </>

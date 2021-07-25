@@ -3,6 +3,7 @@ import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import ToDoList from "./components/ToDoList";
 import { AuthProvider } from "./contexts/AuthContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import PrivateRoute from "./components/PrivateRoute";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./styles.css";
@@ -12,7 +13,9 @@ function App() {
     <Router>
       <AuthProvider>
         <Switch>
-          <PrivateRoute exact path="/" component={ToDoList} />
+          <ThemeProvider>
+            <PrivateRoute exact path="/" component={ToDoList} />
+          </ThemeProvider>
           <Container
             className="d-flex align-items-center justify-content-center"
             style={{ minHeight: "100vh" }}
