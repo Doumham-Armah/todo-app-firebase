@@ -54,23 +54,27 @@ const ToDoList = () => {
 
   return (
     <>
-      <h1 className="title">To-Do App</h1>
-      <h2 className="title">{`Welcome, ${user.email}!`}</h2>
+      <h2 className="title">{`${user.email}'s to-do list`}</h2>
 
       <AddItem />
 
-      <div className={toggle ? "todo-list-dark" : "todo-list-light"}>
-        {toDos
-          ? toDos.map((item, index) => (
-              <ToDoItem
-                key={index}
-                item={item}
-                handleChange={updateCompleted}
-                handleDelete={handleDelete}
-              />
-            ))
-          : null}
+      {/* <div className={toggle ? "todo-list-dark" : "todo-list-light"}> */}
+      <div className="todo-container">
+        <div className="todo-list">
+          {toDos
+            ? toDos.map((item, index) => (
+                <ToDoItem
+                  key={index}
+                  item={item}
+                  handleChange={updateCompleted}
+                  handleDelete={handleDelete}
+                />
+              ))
+            : null}
+        </div>
       </div>
+
+      {/* </div> */}
       {console.log("toggle: ", toggle)}
       <div className="w-100 text-center mt-2">
         <button variant="link" onClick={handleLogOut}>

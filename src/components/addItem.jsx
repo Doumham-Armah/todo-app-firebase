@@ -35,13 +35,16 @@ const AddItem = () => {
     <div className="new">
       <form onSubmit={handleSubmit}>
         <input
+          className="todo-input"
           type="text"
           name="to-do text"
           placeholder="enter to do"
           value={title}
           onChange={handleChange}
         />
-        <button>+</button>
+        <button className="todo-button" type="submit">
+          <i className="fas fa-plus-square"></i>
+        </button>
       </form>
     </div>
   );

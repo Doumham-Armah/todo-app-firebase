@@ -14,9 +14,7 @@ function App() {
       <AuthProvider>
         <ThemeProvider>
           <Switch>
-            {/* <ThemeProvider> */}
             <PrivateRoute exact path="/" component={ToDoList} />
-            {/* </ThemeProvider> */}
             <Container
               className="d-flex align-items-center justify-content-center"
               style={{ minHeight: "100vh" }}
