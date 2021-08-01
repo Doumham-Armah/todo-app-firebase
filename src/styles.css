@@ -4,8 +4,14 @@
   box-sizing: border-box;
 }
 
-body {
+.body {
   background-image: linear-gradient(120deg, #f6d365, #fda085);
+  font-family: "Poppins", "sans-serif";
+  min-height: 100vh;
+}
+
+.body-dark {
+  background-image: linear-gradient(120deg, rgb(60, 60, 60), #131010);
   font-family: "Poppins", "sans-serif";
   min-height: 100vh;
 }
@@ -59,7 +65,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* flex: 1; */
+  flex: 1;
 }
 
 .trash-btn {
@@ -81,14 +87,16 @@ body {
   justify-content: center;
 }
 
-.toggle-btn {
+.toggle-btn,
+.logout-btn {
   border: none;
   background: none;
+}
+
+.toggle-btn {
   margin-right: 50px;
 }
 
 .logout-btn {
-  border: none;
-  background: none;
   margin-left: 50px;
 }

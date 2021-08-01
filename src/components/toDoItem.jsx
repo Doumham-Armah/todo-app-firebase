@@ -14,16 +14,15 @@ function ToDoItem({ item, handleChange, handleDelete }) {
   return (
     // <div className={toggle ? "todo-item-dark" : "todo-item-light"}>
     <div className="todo">
-      <label style={item.completed ? completedStyle : null} htmlFor={item.id}>
-        {item.title}
-      </label>
-
       <input
         id={item.id}
         type="checkbox"
         checked={item.completed}
         onChange={() => handleChange({ item })}
       />
+      <label style={item.completed ? completedStyle : null} htmlFor={item.id}>
+        {item.title}
+      </label>
 
       <button className="trash-btn" onClick={() => handleDelete(item.id)}>
         <i className="fas fa-trash"></i>

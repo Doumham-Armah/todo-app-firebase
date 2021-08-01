@@ -54,35 +54,35 @@ const ToDoList = () => {
 
   return (
     <>
-      <h2 className="title">{`${user.email}'s to-do list`}</h2>
+      <div className={toggle ? "body" : "body-dark"}>
+        <h2 className="title">{`${user.email}'s to-do list`}</h2>
 
-      <AddItem />
+        <AddItem />
 
-      {/* <div className={toggle ? "todo-list-dark" : "todo-list-light"}> */}
-      <div className="todo-container">
-        <div className="todo-list">
-          {toDos
-            ? toDos.map((item, index) => (
-                <ToDoItem
-                  key={index}
-                  item={item}
-                  handleChange={updateCompleted}
-                  handleDelete={handleDelete}
-                />
-              ))
-            : null}
+        <div className="todo-container">
+          <div className="todo-list">
+            {toDos
+              ? toDos.map((item, index) => (
+                  <ToDoItem
+                    key={index}
+                    item={item}
+                    handleChange={updateCompleted}
+                    handleDelete={handleDelete}
+                  />
+                ))
+              : null}
+          </div>
         </div>
-      </div>
 
-      {/* </div> */}
-      {console.log("toggle: ", toggle)}
-      <div className="buttons">
-        <button className="toggle-btn" variant="link" onClick={toggleTheme}>
-          <i class="fas fa-adjust fa-6x"></i>
-        </button>
-        <button className="logout-btn" variant="link" onClick={handleLogOut}>
-          <i class="fas fa-sign-out-alt fa-6x"></i>
-        </button>
+        {console.log("toggle: ", toggle)}
+        <div className="buttons">
+          <button className="toggle-btn" variant="link" onClick={toggleTheme}>
+            <i className="fas fa-adjust fa-4x"></i>
+          </button>
+          <button className="logout-btn" variant="link" onClick={handleLogOut}>
+            <i className="fas fa-sign-out-alt fa-4x"></i>
+          </button>
+        </div>
       </div>
     </>
   );
