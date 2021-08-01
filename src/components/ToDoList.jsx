@@ -76,12 +76,12 @@ const ToDoList = () => {
 
       {/* </div> */}
       {console.log("toggle: ", toggle)}
-      <div className="w-100 text-center mt-2">
-        <button variant="link" onClick={handleLogOut}>
-          Log Out
+      <div className="buttons">
+        <button className="toggle-btn" variant="link" onClick={toggleTheme}>
+          <i class="fas fa-adjust fa-6x"></i>
         </button>
-        <button variant="link" onClick={toggleTheme}>
-          Toggle Theme
+        <button className="logout-btn" variant="link" onClick={handleLogOut}>
+          <i class="fas fa-sign-out-alt fa-6x"></i>
         </button>
       </div>
     </>

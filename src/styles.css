@@ -75,105 +75,20 @@ body {
   padding: 0rem, 0.5rem;
 }
 
-/* body {
-  background-color: whitesmoke;
-} */
-
-/* .todo-list-light {
-  background-color: white;
-  margin: auto;
-  margin-top: 30px;
-  width: 50%;
+.buttons {
+  margin-top: 50px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #efefef;
-  box-shadow:
-    The top layer shadow 0 1px 1px rgba(0, 0, 0, 0.15),
-    The second layer 0 10px 0 -5px #eee,
-    The second layer shadow 0 10px 1px -4px rgba(0, 0, 0, 0.15),
-    The third layer 0 20px 0 -10px #eee,
-    /* The third layer shadow 0 20px 1px -9px rgba(0, 0, 0, 0.15); */
-/* padding: 30px; */
-/* }  */
+  justify-content: center;
+}
 
-/* .todo-list-dark {
-  background-color: #333333;
-  color: white;
-  margin: auto;
-  margin-top: 30px;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #efefef;
-  box-shadow:
-    The top layer shadow 0 1px 1px rgba(0, 0, 0, 0.15),
-    The second layer 0 10px 0 -5px #eee,
-    The second layer shadow 0 10px 1px -4px rgba(0, 0, 0, 0.15),
-    The third layer 0 20px 0 -10px #eee,
-    The third layer shadow 0 20px 1px -9px rgba(0, 0, 0, 0.15);
-  padding: 30px;
-} */
+.toggle-btn {
+  border: none;
+  background: none;
+  margin-right: 50px;
+}
 
-/* .todo-item-light {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 30px 20px 0;
-  width: 70%;
-  border-bottom: 1px solid #cecece;
-  font-family: Roboto, sans-serif;
-  font-weight: 100;
-  font-size: 15px;
-  color: #333333;
-} */
-
-/* .todo-item-dark {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 30px 20px 0;
-  width: 70%;
-  border-bottom: 1px solid #cecece;
-  font-family: Roboto, sans-serif;
-  font-weight: 100;
-  font-size: 15px;
-  color: whitesmoke;
-} */
-
-/* input[type="checkbox"] {
-  margin-right: 10px;
-  font-size: 30px;
-} */
-
-/* input[type="checkbox"]:focus {
-  outline: 0;
-} */
-
-/* .delete-button {
-  margin-left: 75%;
-  margin-bottom: 1%;
-} */
-
-/* .new {
-  background: transparent;
-  border: 0;
-  color: inherit;
-  border-bottom: 1px solid currentColor;
-  margin: auto;
-  margin-top: 30px;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
-/* .title {
-  margin: auto;
-  margin-top: 30px;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
+.logout-btn {
+  border: none;
+  background: none;
+  margin-left: 50px;
+}
