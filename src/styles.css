@@ -70,9 +70,12 @@
   color: black;
   font-size: 1.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex: 1;
+  justify-content: space-between;
+}
+
+.todo input {
+  margin-left: 0.5em;
 }
 
 .trash-btn {
@@ -92,7 +95,6 @@
   margin-top: 50px;
   display: flex;
   justify-content: center;
-  /* padding-bottom: 4em; */
 }
 
 .toggle-btn,
