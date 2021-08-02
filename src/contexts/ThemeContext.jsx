@@ -10,7 +10,7 @@ export function useTheme() {
 }
 
 export const ThemeProvider = ({ children }) => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
 
   // function that toggles the theme
   const toggleTheme = () => {
