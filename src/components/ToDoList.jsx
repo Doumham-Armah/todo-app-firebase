@@ -52,10 +52,12 @@ const ToDoList = () => {
     }
   }
 
+  const printName = (name) => name.substring(0, name.lastIndexOf("@"));
+
   return (
     <>
       <div className={toggle ? "body" : "body-dark"}>
-        <h2 className="title">{`${user.email}'s to-do list`}</h2>
+        <h2 className="title">{`${printName(user.email)}'s to-do list`}</h2>
 
         <AddItem />
 
@@ -74,7 +76,6 @@ const ToDoList = () => {
           </div>
         </div>
 
-        {console.log("toggle: ", toggle)}
         <div className="buttons">
           <button className="toggle-btn" variant="link" onClick={toggleTheme}>
             <i className="fas fa-adjust fa-4x"></i>
