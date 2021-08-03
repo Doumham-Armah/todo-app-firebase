@@ -1,18 +1,14 @@
-import { Button } from "react-bootstrap";
 import { useTheme } from "../contexts/ThemeContext";
 import React from "react";
 
 function ToDoItem({ item, handleChange, handleDelete }) {
-  const { toggle } = useTheme();
-
   const completedStyle = {
-    fontStyle: "italic",
+    // fontStyle: "italic",
     textDecoration: "line-through",
     opacity: "0.5",
   };
 
   return (
-    // <div className={toggle ? "todo-item-dark" : "todo-item-light"}>
     <div className="todo">
       <input
         id={item.id}
@@ -28,8 +24,6 @@ function ToDoItem({ item, handleChange, handleDelete }) {
         <i className="fas fa-trash"></i>
       </button>
     </div>
-
-    // </div>
   );
 }
 

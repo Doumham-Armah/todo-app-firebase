@@ -5,7 +5,6 @@ import { auth, db } from "../firebase";
 import { useAuth } from "../contexts/AuthContext";
 import { useTheme } from "../contexts/ThemeContext";
 import { useHistory } from "react-router-dom";
-import "../styles.css";
 
 const ToDoList = () => {
   const [toDos, setToDos] = useState([]);

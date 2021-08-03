@@ -110,3 +110,7 @@
 .logout-btn {
   margin-left: 50px;
 }
+
+label {
+  padding: 0.4em 0.5em;
+}
