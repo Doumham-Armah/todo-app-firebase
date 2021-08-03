@@ -59,6 +59,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 25%;
 }
 
 .todo-list {
@@ -72,7 +73,8 @@
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  font-size: 1.5rem;
 }
 
 .todo input {
@@ -86,6 +88,7 @@
   padding: 1rem;
   cursor: pointer;
   font-size: 1rem;
+  margin-left: auto;
 }
 
 .todo-item {
@@ -112,6 +115,7 @@
   margin-left: 50px;
 }
 
-label {
+.todo label {
   padding: 0.4em 0.5em;
+  min-width: 25%;
 }
