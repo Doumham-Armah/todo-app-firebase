@@ -8,6 +8,7 @@
 .body-dark {
   font-family: "Poppins", "sans-serif";
   min-height: 100vh;
+  padding: 1.2em;
   padding-bottom: 4em;
 }
 
