@@ -3,7 +3,7 @@ import React from "react";
 
 function ToDoItem({ item, handleChange, handleDelete }) {
   const completedStyle = {
-    // fontStyle: "italic",
+    fontStyle: "italic",
     textDecoration: "line-through",
     opacity: "0.5",
   };
