@@ -38,7 +38,7 @@ const AddItem = () => {
           className="todo-input"
           type="text"
           name="to-do text"
-          placeholder="enter to do"
+          placeholder="add to-do"
           value={title}
           onChange={handleChange}
         />
