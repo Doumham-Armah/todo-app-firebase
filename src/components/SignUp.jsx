@@ -31,8 +31,8 @@ const SignUp = () => {
           setError(errorMessage.message);
         });
       setLoading(false);
-    } catch {
-      setError("Failed to create an account 😔");
+    } catch (err) {
+      setError(err);
     }
   }
 

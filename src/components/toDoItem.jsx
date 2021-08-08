@@ -16,6 +16,8 @@ function ToDoItem({ item, handleChange, handleDelete }) {
         checked={item.completed}
         onChange={() => handleChange({ item })}
       />
+      {/* <i class="fas fa-check"></i> */}
+
       <label style={item.completed ? completedStyle : null} htmlFor={item.id}>
         {item.title}
       </label>

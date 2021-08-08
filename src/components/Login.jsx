@@ -39,8 +39,8 @@ const Login = () => {
       setLoading(true);
       await login(emailRef.current.value, passwordlRef.current.value);
       history.push("/");
-    } catch {
-      setError("Failed to sign in 😔");
+    } catch (err) {
+      setError(err);
     }
     setLoading(false);
   }
