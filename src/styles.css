@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .body,
 .body-dark {
   margin: 0;
@@ -13,6 +8,28 @@
   min-height: 100vh;
   padding: 1.2em;
   padding-bottom: 4em;
+}
+
+.new,
+.title {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-input,
+.todo-button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+.toggle-btn,
+.logout-btn {
+  border: none;
+  background: none;
 }
 
 .body {
@@ -37,22 +54,6 @@
 .body h2 {
   color: #ff6f47;
   font-weight: bold;
-}
-
-.new,
-.title {
-  min-height: 20vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.todo-input,
-.todo-button {
-  padding: 0.5rem;
-  font-size: 2rem;
-  border: none;
-  background: white;
 }
 
 .todo-button {
@@ -102,6 +103,12 @@
   margin-left: auto;
 }
 
+.trash-btn:hover {
+  background: #2e2d2d;
+  color: white;
+  transition: 300ms;
+}
+
 .todo-item {
   padding: 0rem, 0.5rem;
 }
@@ -110,12 +117,6 @@
   margin-top: 50px;
   display: flex;
   justify-content: center;
-}
-
-.toggle-btn,
-.logout-btn {
-  border: none;
-  background: none;
 }
 
 .toggle-btn {
