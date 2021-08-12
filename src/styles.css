@@ -133,3 +133,8 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
+.signup-btn,
+.login-btn {
+  margin-top: 0.8rem;
+}

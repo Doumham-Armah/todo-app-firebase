@@ -62,7 +62,11 @@ const SignUp = () => {
               />
             </Form.Group>
 
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button
+              disabled={loading}
+              className="w-100 signup-btn"
+              type="submit"
+            >
               Sign Up
             </Button>
           </Form>

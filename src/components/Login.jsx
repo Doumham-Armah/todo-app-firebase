@@ -62,7 +62,11 @@ const Login = () => {
               <Form.Control type="password" ref={passwordlRef} required />
             </Form.Group>
 
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button
+              disabled={loading}
+              className="w-100 login-btn"
+              type="submit"
+            >
               Log In
             </Button>
           </Form>
