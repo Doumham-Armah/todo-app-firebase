@@ -15,15 +15,15 @@ function App() {
         <ThemeProvider>
           <Switch>
             <PrivateRoute exact path="/" component={ToDoList} />
-            <Container
+            {/* <Container
               className="d-flex align-items-center justify-content-center"
               style={{ minHeight: "100vh" }}
-            >
-              <div className="w-100" style={{ maxWidth: "400px" }}>
-                <Route path="/login" component={Login} />
-                <Route path="/signup" component={SignUp} />
-              </div>
-            </Container>
+            > */}
+            {/* <div className="w-100" style={{ maxWidth: "400px" }}> */}
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={SignUp} />
+            {/* </div> */}
+            {/* </Container> */}
           </Switch>
         </ThemeProvider>
       </AuthProvider>

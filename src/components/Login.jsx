@@ -46,7 +46,7 @@ const Login = () => {
   }
 
   return (
-    <>
+    <div className="form-container">
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Log In</h2>
@@ -75,7 +75,7 @@ const Login = () => {
       <div className="w-100 text-center mt-2">
         Don't have an account? <Link to="/signup">Sign Up</Link>
       </div>
-    </>
+    </div>
   );
 };
 
