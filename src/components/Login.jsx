@@ -46,34 +46,36 @@ const Login = () => {
   }
 
   return (
-    <div className="form-container">
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Log In</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
+    <div className="login">
+      <div className="form-container">
+        <Card className="card">
+          <Card.Body>
+            <h2 className="text-center mb-4">Log In</h2>
+            {error && <Alert variant="danger">{error}</Alert>}
+            <Form onSubmit={handleSubmit}>
+              <Form.Group id="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" ref={emailRef} required />
+              </Form.Group>
 
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordlRef} required />
-            </Form.Group>
+              <Form.Group id="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" ref={passwordlRef} required />
+              </Form.Group>
 
-            <Button
-              disabled={loading}
-              className="w-100 login-btn"
-              type="submit"
-            >
-              Log In
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Don't have an account? <Link to="/signup">Sign Up</Link>
+              <Button
+                disabled={loading}
+                className="w-100 login-btn"
+                type="submit"
+              >
+                Log In
+              </Button>
+            </Form>
+          </Card.Body>
+        </Card>
+        <div className="w-100 text-center mt-2">
+          Don't have an account? <Link to="/signup">Sign Up</Link>
+        </div>
       </div>
     </div>
   );
